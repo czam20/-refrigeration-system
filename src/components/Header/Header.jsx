@@ -43,7 +43,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-function HeaderSimple() {
+const HeaderSimple = () => {
   const { classes } = useStyles();
 
   return (
