@@ -9,7 +9,7 @@ const App = () => {
       navbar={<Navbar width={{ base: 300 }} height={500} p="xs">{
         <Text>Navbar</Text>
         }</Navbar>}
-      header={<Header height={60} p="xs">{
+      header={<Header height={60} width={100}>{
         <HeaderSimple></HeaderSimple>
         }</Header>}
       styles={(theme) => ({

@@ -1,4 +1,5 @@
-import { createStyles, Header, Container, Group, rem, Button } from '@mantine/core';
+import { createStyles, Header, Group, Button } from '@mantine/core';
+import { IconBrandGoogle } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -8,37 +9,15 @@ const useStyles = createStyles((theme) => ({
     height: '100%',
   },
 
-  links: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
+  buttons: {
+    display: 'flex',
+    alignItems: 'center',
+    height: '100%',
   },
 
   burger: {
     [theme.fn.largerThan('xs')]: {
       display: 'none',
-    },
-  },
-
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: `${rem(8)} ${rem(12)}`,
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    },
-  },
-
-  linkActive: {
-    '&, &:hover': {
-      backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-      color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
     },
   },
 }));
@@ -47,13 +26,13 @@ function HeaderSimple() {
   const { classes } = useStyles();
 
   return (
-    <Header height={60} mb={120}>
-      <Container className={classes.header}>
-        <Group spacing={5}  className={classes.hiddenMobile}>
-            <Button variant="default">Log in</Button>
-            <Button>Sign up</Button>
+    <Header height={60} px="md">
+        <Group spacing={5}  className={classes.header} sx={{ height: '100%' }}>
+            <img className='logo' src="../assets/logo.png" alt="logo"/>
+            <Group spacing={5} className={classes.buttons}>
+              <Button leftIcon={<IconBrandGoogle />} color="yellow">Accerder</Button>                     
+            </Group>
         </Group>
-      </Container>
     </Header>
   );
 }
