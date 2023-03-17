@@ -1,40 +1,29 @@
-import { createStyles, Header, Group, Button } from '@mantine/core';
-import { IconBrandGoogle } from '@tabler/icons-react';
+import {
+  Header as MantineHeader,
+  Group,
+  Button,
+  Image,
+} from "@mantine/core";
+import { IconBrandGoogle } from "@tabler/icons-react";
+import { headerStyles } from "../../styles/headerStyles";
 
-var useStyles = createStyles((theme) => ({
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '100%',
-  },
-
-  buttons: {
-    display: 'flex',
-    alignItems: 'center',
-    height: '100%',
-  },
-
-  burger: {
-    [theme.fn.largerThan('xs')]: {
-      display: 'none',
-    },
-  },
-}));
-
-const HeaderSimple = () => {
-  const { classes } = useStyles();
+export const Header = () => {
+  const { classes } = headerStyles();
 
   return (
-    <Header height={60} px="md">
-        <Group spacing={5}  className={classes.header} sx={{ height: '100%' }}>
-            <img className='logo' src="../assets/logo.png" alt="logo"/>
-            <Group spacing={5} className={classes.buttons}>
-              <Button leftIcon={<IconBrandGoogle />} color="yellow">Accerder</Button>                     
-            </Group>
+    <MantineHeader height={80}>
+      <Group spacing={5} className={classes.header}>
+        <Image
+          maw={45}
+          src={require("../../assets/images/logo.png")}
+          alt="logo"
+        />
+        <Group spacing={5} className={classes.buttons}>
+          <Button leftIcon={<IconBrandGoogle />} color="yellow">
+            Acceder
+          </Button>
         </Group>
-    </Header>
+      </Group>
+    </MantineHeader>
   );
-}
-
-export default HeaderSimple;
+};

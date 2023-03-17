@@ -13,9 +13,9 @@ export const NavbarItem = ({ path, icon, route }) => {
       component={Link}
       to={path}
       className={cx(classes.navbar_item, {
-        [classes.navbar_item_active]: route === active,
+        [classes.navbar_item_active]: path === active,
       })}
-      onClick={() => setActive(route)}
+      onClick={() => setActive(path)}
     >
       <Group spacing="xs">
         {icon}

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router";
 import { Navbar as MantineNavbar, Stack } from "@mantine/core";
 import { NavbarItem } from "./components/NavbarItem";
 import { NavbarProvider } from "../../context/NavbarContext";
@@ -7,9 +8,10 @@ import { navbarItems } from "./navbarItems";
 
 export const Navbar = () => {
   const { classes } = navbarStyles();
+  const route = useLocation();
 
   return (
-    <NavbarProvider initialRoute="Dashboard">
+    <NavbarProvider initialRoute={route.pathname}>
       <MantineNavbar className={classes.navbar} width={{ base: 250 }}>
         <MantineNavbar.Section grow>
           <Stack spacing="xs">

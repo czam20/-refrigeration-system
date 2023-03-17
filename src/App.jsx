@@ -1,6 +1,6 @@
-import { AppShell, Header } from "@mantine/core";
+import { AppShell } from "@mantine/core";
 import React from "react";
-import HeaderSimple from "./components/Header/Header";
+import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import { Outlet } from "react-router-dom";
 
@@ -9,9 +9,7 @@ const App = () => {
     <AppShell
       padding="md"
       navbar={<Navbar />}
-      header={<Header height={60} p="xs">{
-        <HeaderSimple></HeaderSimple>
-        }</Header>}
+      header={<Header />}
       styles={(theme) => ({
         main: { backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0] },
       })}

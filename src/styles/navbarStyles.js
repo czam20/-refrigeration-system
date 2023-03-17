@@ -25,7 +25,7 @@ export const navbarStyles = createStyles((theme) => ({
     },
   },
   text: {
-    fontSize: theme.fontSizes.lg,
+    fontSize: theme.fontSizes.md,
     fontWeight: "500",
   },
 }));
