@@ -1,11 +1,10 @@
-import { AppShell, Header, Text } from "@mantine/core";
+import { AppShell, Header } from "@mantine/core";
 import React from "react";
 import HeaderSimple from "./components/Header/Header";
 import Navbar from "./components/Navbar";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
-  const { pathname = "" } = useLocation();
   return (
     <AppShell
       padding="md"
