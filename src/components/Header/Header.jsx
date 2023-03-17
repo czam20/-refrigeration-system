@@ -1,7 +1,7 @@
 import { createStyles, Header, Group, Button } from '@mantine/core';
 import { IconBrandGoogle } from '@tabler/icons-react';
 
-const useStyles = createStyles((theme) => ({
+var useStyles = createStyles((theme) => ({
   header: {
     display: 'flex',
     justifyContent: 'space-between',

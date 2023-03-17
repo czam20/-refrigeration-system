@@ -1,6 +1,7 @@
 import { AppShell, Header, Navbar, Text } from "@mantine/core";
 import React from "react";
 import HeaderSimple from "./components/Header/Header";
+import { Users } from "./pages/Users/Users";
 
 const App = () => {
   return (
@@ -17,7 +18,7 @@ const App = () => {
       })}
     >
       {
-        <Text>Pages</Text>
+        <Users></Users>
       }
     </AppShell>
   );
