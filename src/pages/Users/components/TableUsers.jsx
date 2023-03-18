@@ -1,36 +1,15 @@
 import React from "react";
 import {
-  Anchor,
-  Avatar,
-  Group,
   ScrollArea,
   Table,
-  Text,
   LoadingOverlay,
   Center,
 } from "@mantine/core";
 import { useUsers } from "../../../hooks/useUsers";
+import { RowTable } from "./RowTable";
 
 export const TableUsers = () => {
   const { users, loading, error } = useUsers();
-
-  const rows = users.map((item) => (
-    <tr key={item.uid}>
-      <td>
-        <Group spacing="sm">
-          <Avatar size={30} src={item.foto} radius={30} />
-          <Text fz="sm" fw={500}>
-            {item.nombre}
-          </Text>
-        </Group>
-      </td>
-      <td>
-        <Anchor component="button" size="sm">
-          {item.email}
-        </Anchor>
-      </td>
-    </tr>
-  ));
 
   if (loading)
     return (
@@ -52,7 +31,11 @@ export const TableUsers = () => {
             <th>Email</th>
           </tr>
         </thead>
-        <tbody>{rows}</tbody>
+        <tbody>
+          {users.map((item,index) => (
+            <RowTable item={item} key={index}></RowTable>
+          ))}
+        </tbody>
       </Table>
     </ScrollArea>
   );
